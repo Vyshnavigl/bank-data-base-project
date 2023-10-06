@@ -27,3 +27,15 @@ CREATE TABLE Transactions (
     TransactionType VARCHAR(20),
     FOREIGN KEY (AccountID) REFERENCES Accounts(AccountID)
 );
+
+Insert a customer into the Customers table:
+INSERT INTO Customers (CustomerID, FirstName, LastName, DateOfBirth, Email, PhoneNumber)
+VALUES (1, 'John', 'Doe', '1980-01-15', 'john.doe@example.com', '555-123-4567');
+
+Create a savings account for the customer:
+INSERT INTO Accounts (AccountID, AccountNumber, CustomerID, AccountType, Balance)
+VALUES (101, 'SAV-12345', 1, 'Savings', 1000.00)
+
+create a transcation history
+INSERT INTO Transactions (TransactionID, AccountID, TransactionDate, Amount, TransactionType)
+VALUES (1001, 101, NOW(), 500.00, 'Deposit');
